@@ -1,0 +1,17 @@
+A <- matrix(1:100, nrow=10)
+B <- matrix(1:1000, nrow=10)
+dim(A)
+dim(B)
+det(A)
+solve(A)
+det(B)
+solve(B)
+
+A_t <- t(A)
+B_t <- t(B)
+
+v <- 1:10
+A_multiplied <- A %*% v
+
+C <- A %*% B
+dim(C)   
