@@ -1,0 +1,43 @@
+---
+title: "My R Markdown Primer"
+output: html_document
+date: "2026-04-12"
+author: "Jennifer Izquierdo"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+R Markdown is a tool that allows you to combine narrative text, R code, and mathematical notation in a single document. It helps create reproducible reports, making it easier to share analyses and results with others.
+
+Markdown syntax is simple and intuitive. You can add headers, lists, bold or italic text, and hyperlinks. This simplicity makes R Markdown a versatile tool for data analysis reporting.
+
+Here is an inline math expression: $\alpha + \beta = \gamma$.
+
+And a displayed equation:
+
+$$
+E = mc^2
+$$
+```{r}
+
+library(palmerpenguins)
+library(ggplot2)
+head(penguins)
+```
+```{r}
+
+summary(penguins$body_mass_g)
+ggplot(penguins, aes(x = species, y = body_mass_g)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Penguin Body Mass by Species",
+       x = "Species",
+       y = "Body Mass (g)")
+```
+
+Using R Markdown streamlines the workflow of writing reports compared to traditional text editors. Integrating code and output directly with narrative text ensures reproducibility and reduces errors. Initially, knitting errors were tricky, but understanding chunk options and syntax made the process smoother.
+
+
